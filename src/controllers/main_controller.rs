@@ -3,7 +3,7 @@ use actix_web::{get, HttpResponse, Responder};
 
 use crate::daos::dao::{ResponseMessage, UserInfoDao};
 
-const OK: &str = "OK";
+use super::status_codes::OK;
 
 #[get("/")]
 pub async fn root() -> impl Responder {

@@ -1,6 +1,7 @@
 
 use serde::Serialize;
 use serde_json::Value;
+use crate::model::Todo;
 
 #[derive(Serialize)]
 pub struct ResponseMessage {
@@ -14,4 +15,23 @@ pub struct UserInfoDao {
     pub id: i32,
     pub name: String,
     pub email: String,
-}    
+}
+
+#[derive(Serialize)]
+pub struct TodoDao {
+    pub todo: Todo,
+}
+
+#[derive(Serialize)]
+pub struct SingTodoDao {
+    pub status: String,
+    pub todo: Todo,
+}
+
+#[derive(Serialize)]
+pub struct TodoListReponse {
+    pub status: String,
+    pub result: usize,
+    pub todos: Vec<Todo>,
+}
+
